@@ -18,11 +18,11 @@ gridStore = new FS.Store.GridFS("gridFiles",
 
 s3Store = new (FS.Store.S3)('s3Files',
   region: 'ap-southeast-1'
-  accessKeyId: 'AKIAI2AGIMJZA7GRHJZA'
-  secretAccessKey: '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'
-  bucket: 'amplayfiertest'
+  accessKeyId: '***'
+  secretAccessKey: '****'
+  bucket: '***'
   ACL: 'private'
-  folder:"sample"
+  folder:"***"
 
   maxTries: 1)
 
