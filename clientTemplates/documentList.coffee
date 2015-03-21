@@ -1,3 +1,4 @@
+
 if Meteor.isClient
   setCollToBeUsed = (clname)->
     Session.set('collUsed',clname)
@@ -22,6 +23,7 @@ if Meteor.isClient
 
   Template.documentList.helpers
     platformFiles:()->
+      console.log s3Options?
       console.log Session.get('collUsed')
       window[Session.get('collUsed')].find().fetch()
 

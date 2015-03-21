@@ -1,12 +1,17 @@
 if Meteor.isServer
   @initDMS = (mode,options)->
     setMode(mode)
+    setOptions(options)
 
 
   @setMode = (mode)->
     @dmsMode = mode
   @getMode = ()->
     dmsMode
+  @setOptions = (options)->
+    console.log options
+
+    @s3Options = options
 
   Meteor.publish('systemFiles',(uid)->
     this.ready()
