@@ -54,4 +54,4 @@ if Meteor.isClient
 
 
     'click .file-delete-btn':(e)->
-      systemFiles.remove({_id:this._id})
+       window[Session.get('collUsed')].remove({_id:this._id})
