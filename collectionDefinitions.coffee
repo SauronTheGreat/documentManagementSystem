@@ -14,21 +14,29 @@ gridStore = new FS.Store.GridFS("gridFiles",
 
   ]
 )
+if Meteor.isServer
+  s3Store = new (FS.Store.S3)('s3Files',
+    region: Meteor.settings.region
+    accessKeyId: Meteor.settings.accessKeyId
+    secretAccessKey: Meteor.settings.secretAccessKey
+    bucket: Meteor.settings.bucket
+    ACL: 'private'
+    folder:Meteor.settings.folder
+
+    maxTries: 1)
 
 
-s3Store = new (FS.Store.S3)('s3Files',
-  region: 'ap-southeast-1'
-  accessKeyId: '***'
-  secretAccessKey: '****'
-  bucket: '***'
-  ACL: 'private'
-  folder:"***"
 
-  maxTries: 1)
+  @s3Files = new FS.Collection("s3Files", {
+    stores: [s3Store]
+  });
+
+if Meteor.isClient
+  s3Store = new (FS.Store.S3)
 
 
 
-@s3Files = new FS.Collection("s3Files", {
-  stores: [s3Store]
-});
+  @s3Files = new FS.Collection("s3Files", {
+    stores: [s3Store]
+  });
 

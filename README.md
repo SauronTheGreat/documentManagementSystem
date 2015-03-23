@@ -20,3 +20,16 @@ mode = 3 -> s3Files
 
 options should be an object , (as of now only applicable in mode 3 which would specify s3 specific options and a blank object in other 2 cases)
 
+
+#Options for S3
+
+The options for S3 should be specified in the settings file and environment variables.
+A sample settings file (run meteor using --settings settings.json) 
+{
+	 "bucket":"***",
+  "accessKeyId":"***",
+  "secretAccessKey":"***",
+  "folder":"***",
+  "region":"***"
+}
+
