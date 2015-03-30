@@ -1,6 +1,6 @@
 Package.describe({
   name: 'rushabhhathi:dms',
-  version: '0.0.2',
+  version: '0.0.3',
   // Brief, one-line summary of the package.
   summary: 'A simple and configurable Document Managemet System for your meteor application',
   // URL to the Git repository containing the source code for this package.

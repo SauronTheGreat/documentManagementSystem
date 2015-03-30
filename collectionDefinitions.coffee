@@ -14,6 +14,30 @@ gridStore = new FS.Store.GridFS("gridFiles",
 
   ]
 )
+
+
+@systemFiles.allow
+  insert:(userId, role) ->
+    true
+  update:(userId, doc, fieldNames, modifier)->
+
+    true
+  remove:(userId, doc)->
+    true
+  download:(userId,doc)->
+    true
+@gridFiles.allow
+  insert:(userId, role) ->
+    true
+  update:(userId, doc, fieldNames, modifier)->
+
+    true
+  remove:(userId, doc)->
+    true
+  download:(userId,doc)->
+    true
+
+
 if Meteor.isServer
   s3Store = new (FS.Store.S3)('s3Files',
     region: Meteor.settings.region
